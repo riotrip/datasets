@@ -32,3 +32,9 @@ Klik baris atau tombol **Detail** untuk membuka record di tab yang sama. Status 
 URL memakai parameter `?id=...` agar detail bisa dibuka langsung dan tombol kembali bekerja. Logo dan favicon menggunakan aset yang sama, `public/dataset.svg`.
 
 Halaman meminta mesin pencari untuk tidak mengindeksnya. Ini bukan perlindungan akses: jika diterbitkan ke GitHub Pages, situs tetap dapat dibuka siapa pun yang tahu alamatnya.
+
+## Publikasi
+
+Repo GitHub bernama `riotrip/datasets`; isi situs tetap sama. Situs dipublikasikan oleh `riotrip/thesis` di `prayogo.is-a.dev/thesis/datasets/`, bukan lewat Pages repo ini.
+
+Workflow `.github/workflows/notify-thesis.yml` mengirim `repository_dispatch` dengan tipe `content-updated` setiap push ke `main` atau saat dijalankan manual. Tambahkan Actions secret `THESIS_TOKEN`: fine-grained token dengan akses **Contents: Read and write** hanya ke `riotrip/thesis`. Workflow thesis menjalankan tes dan menyalin `index.html`, `styles.css`, `catalog.json`, `public/`, dan `src/` ke artifact situs gabungan.
