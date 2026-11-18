@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#ffffff">
+    <title>Dataset · Korpus Abstrak JTI</title>
+    <meta name="description" content="Daftar dataset dan abstrak penelitian Teknologi Informasi.">
+    <link rel="icon" type="image/svg+xml" href="./public/dataset.svg">
+    <link rel="stylesheet" href="./styles.css">
+    <script type="module" src="./src/scripts/catalog.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Lewati ke isi</a>
+    <header class="topbar">
+      <a class="brand" href="./"><img class="brand-mark" src="./public/dataset.svg" width="36" height="36" alt=""><span>Dataset</span></a>
+      <span class="topbar-note">Korpus Abstrak JTI</span>
+    </header>
+
+    <div class="app-layout">
+      <main id="main" class="main-content">
+        <section id="page-heading" class="page-heading">
+          <div>
+            <h1 id="page-title">Dataset</h1>
+            <p id="record-count" class="muted">Memuat dataset…</p>
+          </div>
+          <form id="search-form" class="search-form" role="search">
+            <label class="sr-only" for="search-query">Cari judul atau isi abstrak</label>
+            <input id="search-query" type="search" placeholder="Search dataset" autocomplete="off">
+            <button type="submit">Search</button>
+          </form>
+        </section>
+
+        <p id="load-error" class="error-message" role="alert" hidden></p>
+
+        <section id="list-view" aria-label="Daftar dataset">
+          <nav id="category-nav" class="category-nav" aria-label="Filter status data"></nav>
+          <p id="result-count" class="muted result-count" aria-live="polite">Memuat daftar…</p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Judul</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Keterangan</th>
+                  <th scope="col">Tahun</th>
+                  <th scope="col"><span class="sr-only">Detail</span></th>
+                </tr>
+              </thead>
+              <tbody id="record-list"></tbody>
+            </table>
+          </div>
+          <p id="empty-state" class="muted" hidden>Tidak ada dataset yang cocok.</p>
+        </section>
+
+        <section id="detail-view" aria-labelledby="detail-title" hidden>
+          <button id="back-to-list" class="back-button" type="button">← Kembali ke dataset</button>
+          <div id="detail-status" class="badges"></div>
+          <h1 id="detail-title" class="detail-title"></h1>
+          <p id="detail-note" class="detail-note"></p>
+          <dl id="detail-metadata" class="detail-metadata"></dl>
+          <section class="abstract-section" aria-labelledby="abstract-title">
+            <h2 id="abstract-title">Abstrak</h2>
+            <p id="detail-abstract" class="detail-abstract"></p>
+          </section>
+          <p class="source-row"><a id="detail-source" hidden>Buka sumber asli ↗</a><span id="source-placeholder" class="muted">Tautan sumber akan muncul di sini.</span></p>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
